@@ -15,7 +15,7 @@
   <!--  RESOURCE FOLDERS CONFIGURATION                                  -->
   <!--  Dispatcher configuration for serving static resources           -->
   <!-- **************************************************************** -->
-  <mvc:resources location="/images/" mapping="/images/**" />
+  <mvc:resources location="/img/" mapping="/img/**" />
   <mvc:resources location="/css/" mapping="/css/**" />
     
 
@@ -23,7 +23,7 @@
   <!--  SPRING ANNOTATION PROCESSING                                    -->
   <!-- **************************************************************** -->
   <mvc:annotation-driven />
-  <context:component-scan base-package="thymeleafexamples.extrathyme" />
+  <context:component-scan base-package="org.thymeleaf.econtacts.web.controller" />
 
 
   <!-- **************************************************************** -->
@@ -53,12 +53,7 @@
   <bean id="templateEngine"
         class="org.thymeleaf.spring3.SpringTemplateEngine">
     <property name="templateResolver" ref="templateResolver" />
-    <property name="additionalDialects">
-      <set>
-        <bean class="thymeleafexamples.extrathyme.dialects.score.ScoreDialect" />
-      </set>
-    </property>
-  </bean>
+    </bean>
    
   <bean class="org.thymeleaf.spring3.view.ThymeleafViewResolver">
     <property name="templateEngine" ref="templateEngine" />
