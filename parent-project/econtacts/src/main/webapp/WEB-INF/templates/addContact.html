@@ -1,9 +1,9 @@
-  <form class="form-inline">
-		<input type="text" class="input-small" placeholder="First Name" />
-		<input type="text" class="input-small" placeholder="Email"/>
-		<input type="text" class="input-small" placeholder="Phone Number"/>
-		<input type="text" class="input-small" placeholder="Sex"/>
-		<input type="text" class="input-small" placeholder="Country"/>
+  <form class="form-inline" th:action="@{/home/addContact/add}">
+		<input type="text" name="name" class="input-small" placeholder="First Name" />
+		<input type="email" name="email" class="input-small" placeholder="Email"/>
+		<input type="text" name="phone" class="input-small" placeholder="Phone Number"/>
+		<input type="text" name="sex" class="input-small" placeholder="Sex"/>
+		<input type="text" name="country" class="input-small" placeholder="Country"/>
 		<button type="submit" class="btn btn-primary ">Save</button>
-			<button type="submit" class="btn btn-primary">Cancel</button>
+	    <button type="submit" class="btn btn-primary">Cancel</button>
     </form>

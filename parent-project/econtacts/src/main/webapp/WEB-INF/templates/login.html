@@ -8,18 +8,20 @@
   <body>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
   <script src="/js/bootstrap.min.js"></script>
-  <div class="hero-unit">
+  <div th:substituteby="/logo" /> 	
+    <div class="hero-unit">
     <h1>Welcome to E-Contact Application </h1>
     <p>This module is used to demonstrate the power of thymeleaf template engine which can be used as a complete replacement of JSP (view) in Spring MVC.</p>
     <p>
      <a class="btn btn-primary btn-large" href="http://www.thymeleaf.org/">Learn more</a>
     </p>
     </div>
+   <!-- <div class="container"><img src="../img/my photo.jpg" alt="Smiley face" class="img-circle"/> </div> --> 
    <div class="container">
- <form class="form-signin"  th:action="@{/home.html}" method="post">
+ <form class="form-signin"  th:action="@{/home}" method="post">
         <h2 class="form-signin-heading">Please sign in</h2>
-        <input type="text" class="input-block-level" placeholder="Email address" />
-        <input type="password" class="input-block-level" placeholder="Password" />
+        <input name="name" type="text" class="input-block-level" placeholder="Email address" />
+        <input name="password" type="password" class="input-block-level" placeholder="Password" />
         <label class="checkbox">
           <input type="checkbox" value="remember-me"/> Remember me
         </label>

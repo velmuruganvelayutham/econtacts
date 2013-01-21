@@ -6,76 +6,33 @@
     <link rel="stylesheet" type="text/css" media="all" href="../../css/extrathyme.css" th:href="@{/css/bootstrap.min.css}"/>
   </head>
   <body>
+   <div>
+    <img src="../../images/econtact_logo.png" alt="econtact_logo logo" title="econtact_logo logo" 
+           th:src="@{/img/econtact_logo.png}" />
+    </div>
 <!--Substitute Header here..... -->
 
 <header th:substituteby="/header" />
-
-    
-	<!-- navigation bar-->
-	<ul class="nav nav-tabs nav-stacked">
-  <li class="active">
-    <a href="#">Menu</a>
-  </li>
-  <li><a href="#">Add</a></li>
-  <li><a href="#">List</a></li>
-  <li><a href="#">Delete</a></li>
-</ul>
-	<div th:substituteby="/nav" /> 
+<!-- <h3 class="brand" align="middle" th:text="${user.name}?:'Guest'">Natural</h3> -->
+<div th:substituteby="/nav" /> 
      
 	<!-- Table will be coming if list is selected otherwise Add form will be deleted.... -->
 	
-	<table cellpadding="0" cellspacing="0" border="0" class="table table-bordered" id="example">
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>Email</th>
-			<th>Phone</th>
-			<th>Sex</th>
-			<th>Country</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr class="odd gradeX">
-			<td>Trident</td>
-			<td>Internet
-				 Explorer 4.0</td>
-			<td>Win 95+</td>
-			<td class="center"> 4</td>
-			<td class="center">X</td>
-		</tr>
-		<tr class="odd gradeX">
-			<td>Trident</td>
-			<td>Internet
-				 Explorer 4.0</td>
-			<td>Win 95+</td>
-			<td class="center"> 4</td>
-			<td class="center">X</td>
-		</tr>
-		</tbody>
-		</table >
-	<div th:substituteby="/table" />
+	
+	
+	<div th:substituteby="${templateName}" /> 	
+	
+	
+	<!-- <div  th:substituteby="/table" /> -->
 	<!-- form will be coming here. -->
-   <form class="form-inline">
-		<input type="text" class="input-small" placeholder="First Name"/>
-		<input type="text" class="input-small" placeholder="Email"/>
-		<input type="text" class="input-small" placeholder="Phone Number"/>
-		<input type="text" class="input-small" placeholder="Sex"/>
-		<input type="text" class="input-small" placeholder="Country"/>
-		<button type="submit" class="btn btn-primary ">Save</button>
-			<button type="submit" class="btn btn-primary">Cancel</button>
-    </form>
-<div th:substituteby="/addContact" />
 
-	  
+<!-- <div th:substituteby="/addContact" />  --> 
 
   <script src="http://code.jquery.com/jquery-latest.js"></script>
   <script src="/js/bootstrap.min.js"></script>
 <!-- Footer will be coming here. -->
  </body>
 
-
 <footer th:substituteby="/footer" />
-
-
  
 </html>

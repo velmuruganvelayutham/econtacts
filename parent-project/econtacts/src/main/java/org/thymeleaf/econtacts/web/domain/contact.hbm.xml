@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+ <class name="org.thymeleaf.econtacts.web.domain.Contact" table="contact">
+ <id name="id" type="java.lang.Integer" column="contact_id" >
+ <generator class="identity"/>
+ </id>
+  <many-to-one name="user" class="org.thymeleaf.econtacts.web.domain.User" fetch="select">
+            <column name="user_id" not-null="true" />
+  </many-to-one>
+ <property name="name" column="name" />
+  <property name="email" column="email" />
+  <property name="phone" column="phone" />
+  <property name="sex" column="sex" />
+  <property name="country" column="country" />
+ 
+   </class>
+</hibernate-mapping>
