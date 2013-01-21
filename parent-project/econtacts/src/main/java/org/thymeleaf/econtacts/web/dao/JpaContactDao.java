@@ -20,7 +20,7 @@ public class JpaContactDao implements ContactDao {
 
 	@SuppressWarnings("unchecked")
 	public List<Contact> findAll() {
-		return sessionFactory.getCurrentSession().createQuery("from contact")
+		return sessionFactory.getCurrentSession().createQuery("from Contact")
 				.list();
 
 	}

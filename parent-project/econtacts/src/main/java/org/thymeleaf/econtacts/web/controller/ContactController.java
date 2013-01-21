@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.thymeleaf.econtacts.web.domain.Contact;
 import org.thymeleaf.econtacts.web.domain.User;
 import org.thymeleaf.econtacts.web.service.ContactService;
@@ -29,8 +28,7 @@ public class ContactController {
 	}
 
 	@RequestMapping({ "/home/addContact/add" })
-	public @ResponseBody
-	String addContact(@ModelAttribute Contact contact, Model model,
+	public String addContact(@ModelAttribute Contact contact, Model model,
 			HttpSession session) {
 		System.out.println("UserName" + session.getAttribute("userId"));
 		User user = (User) session.getAttribute("userId");
@@ -38,12 +36,14 @@ public class ContactController {
 		user.getContact().add(contact);
 		userService.save(user);
 		contactService.save(contact);
-
-		return "Contact has been added successfully";
+		model.addAttribute("templateName", "/table");
+		return "home";
 	}
 
 	@RequestMapping({ "/home/table" })
 	public String showTablePage(Model model) {
+
+		model.addAttribute("allContacts", contactService.findAll());
 		model.addAttribute("templateName", "/table");
 		return "home";
 	}

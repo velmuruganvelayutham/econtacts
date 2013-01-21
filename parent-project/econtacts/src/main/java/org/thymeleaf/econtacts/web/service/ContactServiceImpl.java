@@ -20,6 +20,7 @@ public class ContactServiceImpl implements ContactService {
 		contactDao.save(contact);
 	}
 
+	@Transactional(propagation = Propagation.REQUIRED, readOnly = false)
 	public List<Contact> findAll() {
 
 		return contactDao.findAll();

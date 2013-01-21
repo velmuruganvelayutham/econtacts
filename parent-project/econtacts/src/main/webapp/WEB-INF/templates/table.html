@@ -1,4 +1,4 @@
-<table cellpadding="0" cellspacing="0" border="0" class="table" id="example">
+<table cellpadding="0" cellspacing="0" border="0" class="table" id="example" th:unless="${#lists.isEmpty(allContacts)}">
 	<thead>
 		<tr>
 			<th>Name</th>
@@ -9,7 +9,14 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr class="odd gradeX">
+			<tr class="odd gradeX"  th:each="contact : ${allContacts}">
+			<td th:text="${contact.name}">Trident</td>
+			<td th:text="${contact.email}">Internet	 Explorer 4.0</td>
+			<td th:text="${contact.phone}">Win 95+</td>
+			<td th:text="${contact.sex}"  class="center"> 4</td>
+			<td  th:text="${contact.country}" class="center">X</td>
+		</tr>
+		<tr class="odd gradeX" th:remove="all">
 			<td>Trident</td>
 			<td>Internet
 				 Explorer 4.0</td>
@@ -17,13 +24,6 @@
 			<td class="center"> 4</td>
 			<td class="center">X</td>
 		</tr>
-		<tr class="odd gradeX">
-			<td>Trident</td>
-			<td>Internet
-				 Explorer 4.0</td>
-			<td>Win 95+</td>
-			<td class="center"> 4</td>
-			<td class="center">X</td>
-		</tr>
+
 		</tbody>
 		</table >

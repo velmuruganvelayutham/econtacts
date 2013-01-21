@@ -64,8 +64,11 @@
   <bean class="org.thymeleaf.spring3.view.ThymeleafViewResolver">
     <property name="templateEngine" ref="templateEngine" />
   </bean>    
-   
- <!--  Beans for Hibernate Datasource configuration -->
+ 
+ <!-- **************************************************************** -->
+  <!-- DATA SOURCE AND TRANSACTION MANAGER FOR DATABASE                    -->
+  <!--  Beans for Hibernate Datasource configuration                   -->
+  <!-- **************************************************************** -->
  <bean id="propertyConfigurer"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
 		p:location="/WEB-INF/jdbc.properties" />

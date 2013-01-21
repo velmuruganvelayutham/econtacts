@@ -17,7 +17,6 @@ public class JpaUserDao implements UserDao {
 
 	public void update(User user) {
 		sessionFactory.getCurrentSession().update(user);
-
 	}
 
 }

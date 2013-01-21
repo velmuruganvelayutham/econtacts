@@ -6,10 +6,11 @@
     <link rel="stylesheet" type="text/css" media="all" href="../../css/extrathyme.css" th:href="@{/css/bootstrap.min.css}"/>
   </head>
   <body>
-   <div>
+  <div th:substituteby="/logo" /> 
+   <!-- <div>
     <img src="../../images/econtact_logo.png" alt="econtact_logo logo" title="econtact_logo logo" 
            th:src="@{/img/econtact_logo.png}" />
-    </div>
+    </div> -->
 <!--Substitute Header here..... -->
 
 <header th:substituteby="/header" />
